@@ -73,10 +73,21 @@
 .add_feature_name <- function(x) {
   if (length(x) == 4) {
     x$name <- x$type
+  } else if ("standard_name" %in% names(x)) {
+    x$name <- x$standard_name
+  } else if ("gene" %in% names(x)) {
+    x$name <- x$gene
   } else if ("label" %in% names(x)){
     x$name <- x$label
   } else {
     x$name <- x[[5]]
+  }
+  x
+}
+.add_feature_notes <- function(x) {
+
+  if ("note" %in% names(x)) {
+    x$note <- paste(x$note)
   }
   x
 }
@@ -117,6 +128,7 @@
       }
     }
     feature <- .add_feature_name(feature)
+    feature <- .add_feature_notes(feature)
     features[[i]] <- feature
   }
   features

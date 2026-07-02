@@ -2,17 +2,19 @@
 
   feats <- lapply(seq(length(x)), \(i) {
     feat <- x[[i]]
-
+    if (is.null(feat$note)) {
+      feat$note <- ""
+    }
     data.frame(
       index = i,
       name = feat$name,
       type = feat$type,
+      note = feat$note,
       start = feat$start_end[1],
       end = feat$start_end[2],
       direction = as.numeric(feat$direction)
     )
   })
-
   dat <- do.call(rbind, feats)
 
   # turn certain features in to numeric columns

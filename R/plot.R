@@ -1,4 +1,4 @@
-
+1
 #' @importFrom rlang .data
 #' @noRd
 .plot_plasmid <- function(
@@ -6,7 +6,9 @@
     bp,
     name = "Plasmid Name",
     rotation = 0,
-    label_wrap = 20
+    label_wrap = 20, 
+    arrow_head_size = 0.2, 
+    label_size = 4
     ) {
   dat <- dat[dat$type != "source", ]
 
@@ -36,7 +38,7 @@
       ggplot2::aes(label = stringr::str_wrap(.data$name, label_wrap)),
       stat = "arrowLabel",
       box.padding = 0.6,
-      size = 3,
+      size = label_size,
       nudge_y = 1,
       segment.curvature = 0.01,
       label.r = 0,
@@ -45,7 +47,7 @@
     stat_arrow(
       colour = "black",
       bp = bp,
-      arrowhead_size = 1
+      arrowhead_size = arrow_head_size
       ) +
     ggfittext::geom_fit_text(
       ggplot2::aes(
@@ -92,10 +94,11 @@
 #' @param plasmid A list of class 'plasmid' created through `read_gb()`.
 #' @param name Name of the plasmid, to be shown in the center.
 #' @param label_wrap Passed to `stringr::str_wrap()` to wrap the long labels.
+#' @param label_size Passed to ggrepel to set the label text size
 #'
 #' @return A ggplot object.
 #' @export
-plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20) {
+plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL) {
   if (methods::is(plasmid, "plasmid")) {
     features <- as.data.frame(plasmid, bp = plasmid$length)
   } else if (methods::is(plasmid, "data.frame")) {
@@ -104,7 +107,9 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20) {
     cli::cli_abort("Must be either plasmid or data.frame")
   }
 
-  if (methods::is(plasmid, "data.frame")) {
+  if (!is.null(seq_length)) {
+    bp <- seq_length
+  } else if (methods::is(plasmid, "data.frame")) {
     bp <- max(c(features$start, features$end))
   } else {
     bp <- plasmid$length
@@ -119,6 +124,8 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20) {
     features,
     bp  = bp,
     name = name,
-    label_wrap = label_wrap
+    label_wrap = label_wrap, 
+    arrow_head_size = arrow_head_size,
+    label_size = label_size
     )
 }

@@ -112,7 +112,7 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
         middle = data$middle,
         phlange = data$phlange,
         direction = data$direction,
-        arrowhead_width = 0.5,
+        arrowhead_width = 0,
         width = width,
         plasmid_length = bp,
         arrowhead_size = arrowhead_size
