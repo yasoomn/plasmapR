@@ -43,45 +43,45 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
     data$end[wrong_way] <- data$start[wrong_way]
     data$length <- data$end - data$start
 
-    .find_overlaps <- function(data) {
-
-
-      between <- function(x, y, z) {
-        x > y & x < z
-      }
-
-
-      data$id <- seq_len(nrow(data))
-      mat <- outer(data$id, data$id, FUN = function(x, y) {
-
-        x_start <- data[x, "start"]
-        x_end   <- data[x, "end"]
-        y_start <- data[y, "start"]
-        y_end   <- data[y, "end"]
-
-        # check if either the start or the end of the feature lies within
-        # the other feature
-        (
-          between(x_end, y_start, y_end) |
-          between(x_start, y_start, y_end)
-        ) & data$length[x] < data$length[y] # only say it is overlapping if it's shorter than the other feature
-
-      })
-
-      vec <- apply(mat, 2, function(x) data[x, "id"], simplify = TRUE)
-      vec <- unique(unlist(vec))
-      vec
-
+    between <- function(x, y, z) {
+      x > y & x < z
     }
 
-    overlap <- .find_overlaps(data)
+    .overlaps <- function(x_idx, y_idx) {
+      x_start <- data[x_idx, "start"]
+      x_end   <- data[x_idx, "end"]
+      y_start <- data[y_idx, "start"]
+      y_end   <- data[y_idx, "end"]
 
+      (
+        between(x_end, y_start, y_end) |
+        between(x_start, y_start, y_end) |
+        between(y_end, x_start, x_end) |
+        between(y_start, x_start, x_end)
+      )
+    }
 
-    # overlap_end   <- sapply(data$end, function(i) TRUE %in% (i < data$end))
-    # overlap <- overlap_start & overlap_end
-    data$middle[overlap] <- data$middle[overlap] + 0.6
+    data$middle <- 4
     data$arrowhead_width <- 0.5
-    data$arrowhead_width[overlap] <- 0.5
+
+    ordered_idx <- order(-data$length)
+
+    for (pos in seq_along(ordered_idx)) {
+      current_idx <- ordered_idx[pos]
+      current_level <- 0
+
+      while (any(vapply(
+        ordered_idx[seq_len(pos - 1)],
+        function(previous_idx) {
+          .overlaps(current_idx, previous_idx) && data$middle[previous_idx] == 4 + 0.6 * current_level
+        },
+        logical(1)
+      ))) {
+        current_level <- current_level + 1
+      }
+
+      data$middle[current_idx] <- 4 + 0.6 * current_level
+    }
 
     points <- .feature_get_dim(
       start = data$start,
@@ -135,21 +135,23 @@ StatArrowLabel <- ggplot2::ggproto('StatArrowLabel', StatArrow,
                            invert = TRUE) {
     # data$length <- data$end - data$start
 
-
-  df <- data.frame(
+    # Calculate label height range based on arrow width
+    label_width <- 0.4  # width of the label area
+    
+    df <- data.frame(
       x = mean(c(data$start, data$end)),
       y = data$middle,
-      ymin = 3.5,
-      ymax = 4.5,
+      ymin = data$middle - label_width,
+      ymax = data$middle + label_width,
       xmin = data$start,
       xmax = data$end
     )
 
-  fil <- data$length / bp > nchar(data$label) / bp * 60
+    fil <- data$length / bp > nchar(data$label) / bp * 60
 
-  if (invert) fil <- !fil
-  # if (! invert) df <- df[, c("y", "xmin", "xmax")]
-  df[fil]
+    if (invert) fil <- !fil
+    # if (! invert) df <- df[, c("y", "xmin", "xmax")]
+    df[fil]
   }#,
   # required_aes = c('start', 'end')
 )
