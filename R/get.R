@@ -61,7 +61,7 @@
 }
 
 .is_label_start <- function(x) {
-  stringr::str_detect(x, "\\/")
+  stringr::str_detect(x, " \\/")
 }
 
 .get_feature_index <- function(x) {
@@ -111,7 +111,7 @@
       } else if (.is_label_start(line)) {
         current_label <- .get_label(line)
         value <- .get_value(line)
-
+        
         if (current_label == "direction") {
           value <- c(
             "RIGHT" = 1,
