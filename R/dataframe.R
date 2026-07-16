@@ -22,11 +22,12 @@
   dat$end <- as.numeric(dat$end)
   dat$direction <- as.numeric(dat$direction)
 
-  over_origin <- dat$start > dat$end & dat$direction == 1
+  valid_coords <- !is.na(dat$start) & !is.na(dat$end) & is.finite(dat$start) & is.finite(dat$end)
+  over_origin <- valid_coords & dat$start > dat$end & dat$direction == 1
 
   if (any(over_origin)) {
     if (is.null(bp)) {
-      bp <- max(c(dat$start, dat$end))
+      bp <- max(c(dat$start[valid_coords], dat$end[valid_coords]), na.rm = TRUE)
     }
     
     # For origin-spanning features like join(4891..5096,1..751):
@@ -35,33 +36,39 @@
     # - All other features get shifted by the same offset
     
     # Find the origin-spanning feature with the smallest end coordinate
-    # This determines our offset
+    # This determines our offset. Only consider features with valid coordinates.
     min_end <- min(dat$end[over_origin])
     offset <- min_end
     
-    # Apply offset to all coordinates
-    dat$start <- dat$start - offset
-    dat$end <- dat$end - offset
+    # Apply the same offset to valid coordinates so the feature becomes continuous
+    # in a single coordinate system without changing rows with missing values.
+    original_start <- dat$start
+    original_end <- dat$end
+
+    dat$start[valid_coords] <- original_start[valid_coords] - offset
+    dat$end[valid_coords] <- original_end[valid_coords] - offset
     
-    # For origin-spanning features, calculate the correct end position
+    # For origin-spanning features, calculate the correct end position from the
+    # original coordinates so each feature is reconstructed independently.
     # Original: join(4891..5096, 1..751) with bp=5096
     # After offset by 751: start=4140, end=0
     # Correct end should be: start + ((5096-4891+1) + 751 - 1) = 4140 + 956 = 5096
+   
     for (i in which(over_origin)) {
-      original_start <- dat$start[i] + offset  # Restore original start
-      original_end <- dat$end[i] + offset      # Restore original end
+      feature_start <- original_start[i]
+      feature_end <- original_end[i]
       
       # Calculate total feature length: (bp - start + 1) + end
-      part1_length <- bp - original_start + 1  # From start to end of plasmid
-      part2_length <- original_end              # From beginning to end position
+      part1_length <- bp - feature_start + 1  # From start to end of plasmid
+      part2_length <- feature_end             # From beginning to end position
       total_length <- part1_length + part2_length
       
-      # Set the new end position
+      # Set the new end position while keeping the shifted start coordinate.
       dat$end[i] <- dat$start[i] + total_length - 1
     }
     
     # Handle any negative coordinates by wrapping them around
-    negative_coords <- dat$start < 0 | dat$end < 0
+    negative_coords <- valid_coords & (dat$start < 0 | dat$end < 0)
     dat$start[negative_coords & dat$start < 0] <- 
       dat$start[negative_coords & dat$start < 0] + bp
     dat$end[negative_coords & dat$end < 0] <- 

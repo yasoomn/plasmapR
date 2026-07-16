@@ -138,6 +138,41 @@ test_that("Multiple origin-spanning features", {
   expect_true(all(df$end >= df$start))
 })
 
+test_that("Multiple origin-spanning features preserve each feature length", {
+  test_features <- list(
+    list(
+      type = "CDS",
+      name = "feature1",
+      start_end = c(4500, 500),
+      direction = 1
+    ),
+    list(
+      type = "CDS",
+      name = "feature2",
+      start_end = c(4800, 300),
+      direction = 1
+    ),
+    list(
+      type = "gene",
+      name = "normal_feature",
+      start_end = c(1000, 2000),
+      direction = 1
+    )
+  )
+
+  df <- .feature_list_to_df(test_features, bp = 5000)
+
+  feature1 <- df[df$name == "feature1", c("start", "end")]
+  feature2 <- df[df$name == "feature2", c("start", "end")]
+
+  expect_equal(feature1$start, 4200)
+  expect_equal(feature1$end, 5200)
+  expect_equal(feature2$start, 4500)
+  expect_equal(feature2$end, 5000)
+  expect_equal(feature1$end - feature1$start + 1, 1001)
+  expect_equal(feature2$end - feature2$start + 1, 501)
+})
+
 test_that("Complement origin-spanning features", {
   test_features <- list(
     list(
