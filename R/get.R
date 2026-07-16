@@ -13,7 +13,7 @@
 }
 
 .get_start_end <- function(x) {
-  start_stops <- stringr::str_extract_all(x, "\\d+\\.\\.\\d+")[[1]]
+  start_stops <- stringr::str_extract_all(x, "[<>]?\\d+\\.\\.[<>]?\\d+")[[1]]
   numbers <- unlist(stringr::str_extract_all(start_stops, "\\d+"))
   numbers <- as.numeric(numbers)
 
