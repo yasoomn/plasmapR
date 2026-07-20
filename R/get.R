@@ -1,5 +1,7 @@
 .get_label <- function(x) {
-  stringr::str_extract(x, "(?<=\\/)\\w+")
+  label <- stringr::str_extract(x, "(?<=\\/)%?\\w+")
+  label <- ifelse(is.na(label), "label", label) # prevents non-standard labels from breaking the code.
+  label
 }
 
 .get_value <- function(x) {
@@ -111,7 +113,6 @@
       } else if (.is_label_start(line)) {
         current_label <- .get_label(line)
         value <- .get_value(line)
-        
         if (current_label == "direction") {
           value <- c(
             "RIGHT" = 1,
