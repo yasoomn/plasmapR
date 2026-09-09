@@ -11,6 +11,10 @@
     label_size = 4
     ) {
   dat <- dat[dat$type != "source", ]
+  label_dat <- dat
+  if ("show_label" %in% names(dat)) {
+    label_dat <- dat[dat$show_label %in% TRUE, , drop = FALSE]
+  }
 
   name_supplied <- !is.null(name) & name != ""
 
@@ -36,6 +40,7 @@
 
     ggrepel::geom_label_repel(
       ggplot2::aes(label = stringr::str_wrap(.data$name, label_wrap)),
+      data = label_dat,
       stat = "arrowLabel",
       box.padding = 0.6,
       size = label_size,
@@ -54,6 +59,7 @@
         label = .data$name,
         y = yintercept
       ),
+      data = label_dat,
       stat = "arrowLabel",
       grow = FALSE,
       size = 10,
