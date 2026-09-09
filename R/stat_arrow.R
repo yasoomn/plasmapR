@@ -69,18 +69,20 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
     for (pos in seq_along(ordered_idx)) {
       current_idx <- ordered_idx[pos]
       current_level <- 0
+      vertical_direction <- if (data$direction[current_idx] == -1) -1 else 1
 
       while (any(vapply(
         ordered_idx[seq_len(pos - 1)],
         function(previous_idx) {
-          .overlaps(current_idx, previous_idx) && data$middle[previous_idx] == 4 + 0.6 * current_level
+          .overlaps(current_idx, previous_idx) &&
+            data$middle[previous_idx] == 4 + vertical_direction * 0.4 * current_level
         },
         logical(1)
       ))) {
         current_level <- current_level + 1
       }
 
-      data$middle[current_idx] <- 4 + 0.6 * current_level
+      data$middle[current_idx] <- 4 + vertical_direction * 0.4 * current_level
     }
 
     points <- .feature_get_dim(
