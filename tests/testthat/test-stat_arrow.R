@@ -30,6 +30,7 @@ test_that("overlapping reverse arrows are stacked down", {
   longest <- which.max(processed$length)
 
   expect_equal(processed$middle[longest], 4)
-  expect_true(all(processed$middle[-longest] < ))
+  expect_true(all(processed$middle[-longest] < 4))
   expect_equal(processed$middle[2], processed$middle[3])
 })
+

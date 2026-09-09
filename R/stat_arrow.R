@@ -44,7 +44,7 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
     data$length <- data$end - data$start
 
     between <- function(x, y, z) {
-      x > y & x < z
+      x >= y & x <= z
     }
 
     .overlaps <- function(x_idx, y_idx) {

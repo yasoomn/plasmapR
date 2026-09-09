@@ -41,3 +41,22 @@ test_that("show_label controls feature labels without hiding arrows", {
   }, logical(1))))
   expect_equal(nrow(plot$data), 2)
 })
+
+test_that("inside-arrow labels keep their arrow lane", {
+  dat <- data.frame(
+    index = 1:2,
+    name = c("a", "b"),
+    type = c("misc_feature", "misc_feature"),
+    start = c(100, 100),
+    end = c(1000, 1000),
+    direction = c(1, 1)
+  )
+
+  built <- ggplot2::ggplot_build(
+    plot_plasmid(dat, name = "", seq_length = 1200)
+  )
+  labels <- built$data[[4]]
+
+  expect_equal(labels$x, rep(550, 2))
+  expect_equal(labels$y, c(4, 4.4))
+})

@@ -63,7 +63,6 @@
       stat = "arrowLabel",
       grow = FALSE,
       size = 10,
-      position = ggplot2::position_dodge2(),
       min.size = 1,
       invert = FALSE,
       flip = FALSE
@@ -123,7 +122,7 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_
 
 
   # remove NA values for start and end, need better handling of this
-  fil <- is.na(features$start) | is.na(features$end) | features$type == "gene"
+  fil <- is.na(features$start) | is.na(features$end) 
   features <- features[!fil, ]
 
   .plot_plasmid(
