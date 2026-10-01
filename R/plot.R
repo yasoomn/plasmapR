@@ -8,7 +8,8 @@
     rotation = 0,
     label_wrap = 20, 
     arrow_head_size = 0.2, 
-    label_size = 4
+    label_size = 4,
+    fit_text_size = 4
     ) {
   dat <- dat[dat$type != "source", ]
   label_dat <- dat
@@ -62,7 +63,7 @@
       data = label_dat,
       stat = "arrowLabel",
       grow = FALSE,
-      size = 10,
+      size = fit_text_size,
       min.size = 1,
       invert = FALSE,
       flip = FALSE
@@ -103,7 +104,7 @@
 #'
 #' @return A ggplot object.
 #' @export
-plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL) {
+plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL, fit_text_size = 4) {
   if (methods::is(plasmid, "plasmid")) {
     features <- as.data.frame(plasmid, bp = plasmid$length)
   } else if (methods::is(plasmid, "data.frame")) {
@@ -131,6 +132,7 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_
     name = name,
     label_wrap = label_wrap, 
     arrow_head_size = arrow_head_size,
-    label_size = label_size
+    label_size = label_size, 
+    fit_text_size = fit_text_size
     )
 }
