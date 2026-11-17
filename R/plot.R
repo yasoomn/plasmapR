@@ -133,6 +133,7 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_
   .plot_plasmid(
     features,
     bp  = bp,
+    start_bp = start_bp,
     name = name,
     label_wrap = label_wrap, 
     arrow_head_size = arrow_head_size,
