@@ -4,6 +4,7 @@
 .plot_plasmid <- function(
     dat,
     bp,
+    start_bp = 0,
     name = "Plasmid Name",
     rotation = 0,
     label_wrap = 20, 
@@ -70,7 +71,7 @@
 
     ) +
     ggplot2::ylim(c(yintercept - 4, NA)) +
-    ggplot2::xlim(c(0, bp)) +
+    ggplot2::xlim(c(start_bp, bp)) +
     ggplot2::theme_void() +
     ggplot2::scale_fill_brewer(type = 'qual', palette = 5) +
     ggplot2::theme(
@@ -101,10 +102,13 @@
 #' @param name Name of the plasmid, to be shown in the center.
 #' @param label_wrap Passed to `stringr::str_wrap()` to wrap the long labels.
 #' @param label_size Passed to ggrepel to set the label text size
+#' @param arrow_head_size Passed to `stat_arrow()` to set the size of the arrow heads.
+#' @param seq_length Optional, if the plasmid is a data.frame, this can be used to set the length of the plasmid. If not supplied, the maximum end position will be used.
+#' @param start_bp Optional, if the plasmid is a data.frame, this can be used to set the starting position of the plasmid. If not supplied, the minimum start position will be used.
 #'
 #' @return A ggplot object.
 #' @export
-plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL, fit_text_size = 4) {
+plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL, start_bp = 0, fit_text_size = 4) {
   if (methods::is(plasmid, "plasmid")) {
     features <- as.data.frame(plasmid, bp = plasmid$length)
   } else if (methods::is(plasmid, "data.frame")) {
