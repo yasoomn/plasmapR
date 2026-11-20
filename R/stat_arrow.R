@@ -84,13 +84,13 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
 
       data$middle[current_idx] <- 4 + vertical_direction * 0.4 * current_level
     }
-
+   #print(params)
     points <- .feature_get_dim(
       start = data$start,
       end = data$end,
       direction = data$direction,
-      phlange_angle = 8,
-      bp = 6000
+      phlange_angle = 4,
+      bp = params$bp
     )
 
     # data$start   <- points$start
@@ -103,7 +103,7 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
   compute_group = function(data,
                            scales,
                            width = 0.15,
-                           bp = 6000,
+                           bp = plasmid_length,
                            arrowhead_size = 8){
 
 
@@ -116,7 +116,7 @@ StatArrow <- ggplot2::ggproto('StatArrow', ggplot2::Stat,
         direction = data$direction,
         arrowhead_width = 0,
         width = width,
-        plasmid_length = bp,
+        plasmid_length = plasmid_length,
         arrowhead_size = arrowhead_size
       )
 

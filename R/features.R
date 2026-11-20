@@ -3,9 +3,12 @@
 .feature_get_dim <- function(start,
                              end,
                              direction = 1,
-                             phlange_angle = 8,
+                             phlange_angle = 4,
                              bp = 6000) {
   df <- lapply(seq_along(start), function(i) {
+    if(is.na(bp) || is.null(bp)) {
+      bp <- 6000
+    }
     start <- start[i]
     end <- end[i]
     direction <- direction[i]
@@ -26,9 +29,9 @@
       end <- start
       start <- end_temp
     }
-
-    phlange <- end - direction * bp / 100
-
+    
+    # Arrow phlange size is calculated as 0.5% of the plasmid length
+    phlange <- end - direction * bp * 0.005
 
     if (abs(length) < arrow_width) {
       phlange <- start

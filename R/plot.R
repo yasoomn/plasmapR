@@ -108,9 +108,10 @@
 #'
 #' @return A ggplot object.
 #' @export
-plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 1, label_size = 4, seq_length = NULL, start_bp = 0, fit_text_size = 4) {
+plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 100, label_size = 4, seq_length = NULL, start_bp = 0, fit_text_size = 4) {
   if (methods::is(plasmid, "plasmid")) {
     features <- as.data.frame(plasmid, bp = plasmid$length)
+    
   } else if (methods::is(plasmid, "data.frame")) {
     features <- plasmid
   } else {
@@ -125,11 +126,12 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_
     bp <- plasmid$length
   }
 
-
   # remove NA values for start and end, need better handling of this
   fil <- is.na(features$start) | is.na(features$end) 
   features <- features[!fil, ]
-
+  #print(plasmid$length)
+  print("bp from file")
+  print(bp)
   .plot_plasmid(
     features,
     bp  = bp,
