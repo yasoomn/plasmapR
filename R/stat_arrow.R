@@ -148,8 +148,12 @@ StatArrowLabel <- ggplot2::ggproto('StatArrowLabel', StatArrow,
       xmin = data$start,
       xmax = data$end
     )
-
-    fil <- data$length / bp > nchar(data$label) / bp * 60
+    #print(data$length)
+    ##print(bp)
+    fil <- data$length > (nchar(data$label) * 20 )
+    # fil = TRUE label goes inside the arrow, fil = FALSE label goes outside the arrow
+    
+    #print(data$length/bp)
 
     if (invert) fil <- !fil
     # if (! invert) df <- df[, c("y", "xmin", "xmax")]
