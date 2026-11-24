@@ -118,6 +118,11 @@
             "RIGHT" = 1,
             "LEFT" = -1
           )[value]
+        } else if (stringr::str_detect(value, "Geneious type: ")) {
+          ## Geneious prime exported genbank files have a note that contains the type of feature instead of the type field. 
+          # This is a workaround to get the type from the note field.
+          current_label <- "type"
+          value <- stringr::str_remove(value, "Geneious type: ")
         }
 
         feature[[current_label]] <- value
@@ -176,3 +181,4 @@ read_gb <- function(file) {
   class(plasmid) <- c("plasmid", class(plasmid))
   plasmid
 }
+
