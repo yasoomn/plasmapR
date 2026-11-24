@@ -1,7 +1,7 @@
 test_that("Transform to Non-Polar", {
   expect_equal(
     {
-      fl <- system.file('extdata', 'petm20.gb', package = "plasmapR")
+      fl <- system.file('extdata', 'pYM038.gb', package = "plasmapR")
 
       plasmid <- fl |> read_gb()
 

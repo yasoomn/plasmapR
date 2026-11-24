@@ -99,3 +99,23 @@ plt + ggplot2::theme_bw()
 ```
 
 ![](man/figures/example-theme-1.png)<!-- -->
+
+## Inspecting Plots for Bundled Files
+
+The test suite checks that each bundled GenBank-format file can be parsed and
+used to build a plasmid plot:
+
+``` r
+devtools::test(filter = "plot-extdata")
+```
+
+To render all bundled files as PNGs for visual inspection, run this from the
+package root:
+
+``` sh
+Rscript tools/render_extdata_gallery.R
+```
+
+The images are saved in `extdata-plots/`. You can supply a different output
+directory as an argument. The gallery includes `.gb`, `.gbk`, and `.txt` files
+and ignores other files in `inst/extdata`.

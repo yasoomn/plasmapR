@@ -10,10 +10,13 @@
     label_wrap = 20, 
     arrow_head_size = 0.2, 
     label_size = 4,
-    fit_text_size = 4
+    fit_text_size = 12
     ) {
+
   dat <- dat[dat$type != "source", ]
   label_dat <- dat
+  
+  
   if ("show_label" %in% names(dat)) {
     label_dat <- dat[dat$show_label %in% TRUE, , drop = FALSE]
   }
@@ -49,7 +52,7 @@
       nudge_y = 1,
       segment.curvature = 0.01,
       label.r = 0,
-      bp = 400
+      bp = bp,
     ) +
     stat_arrow(
       colour = "black",
@@ -67,7 +70,8 @@
       size = fit_text_size,
       min.size = 1,
       invert = FALSE,
-      flip = FALSE
+      flip = FALSE,
+      bp = bp
 
     ) +
     ggplot2::ylim(c(yintercept - 4, NA)) +
@@ -108,7 +112,7 @@
 #'
 #' @return A ggplot object.
 #' @export
-plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 100, label_size = 4, seq_length = NULL, start_bp = 0, fit_text_size = 4) {
+plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_head_size = 100, label_size = 4, seq_length = NULL, start_bp = 0, fit_text_size = 12) {
   if (methods::is(plasmid, "plasmid")) {
     features <- as.data.frame(plasmid, bp = plasmid$length)
     
@@ -130,8 +134,7 @@ plot_plasmid <- function(plasmid, name = "Plasmid Name", label_wrap = 20, arrow_
   fil <- is.na(features$start) | is.na(features$end) 
   features <- features[!fil, ]
   #print(plasmid$length)
-  print("bp from file")
-  print(bp)
+
   .plot_plasmid(
     features,
     bp  = bp,
