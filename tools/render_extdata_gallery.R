@@ -39,7 +39,7 @@ for (file in fixture_files) {
     ggplot2::ggsave(
       filename = output_file,
       plot = plot,
-      width = 8,
+      width = 12,
       height = 4,
       dpi = 150
     )

@@ -150,8 +150,9 @@ StatArrowLabel <- ggplot2::ggproto('StatArrowLabel', StatArrow,
     )
     #print(data$length)
     ##print(bp)
-    fil <- data$length > (nchar(data$label) * 20 )
+    fil <- data$length > (nchar(data$label) * 20) & data$length > (bp * 0.05)
     # fil = TRUE label goes inside the arrow, fil = FALSE label goes outside the arrow
+    # second condition is to avoid labels for very small arrows, which would be unreadable. Arrow must be at least 5% of the plasmid length to have a label.
     
     #print(data$length/bp)
 
