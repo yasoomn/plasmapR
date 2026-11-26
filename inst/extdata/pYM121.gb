@@ -1,0 +1,450 @@
+LOCUS       pYM121                  7376 bp    DNA     circular UNA 11-NOV-2026
+DEFINITION  replacement atpB c4.
+ACCESSION   urn.local...17-jv1ns12
+VERSION     urn.local...17-jv1ns12
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+FEATURES             Location/Qualifiers
+     regulatory      77..224
+                     /note="Geneious type: promoter"
+                     /note="Derived using Geneious Prime 2025.1.3 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="KanR Promoter"
+     CDS             225..1040
+                     /product="Aph(3') aminoglycoside O-phosphotransferase"
+                     /codon_start=1
+                     /transl_table=1
+                     /note="Derived using Geneious Prime 2025.1.3 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="KanR"
+     regulatory      1041..1067
+                     /note="Geneious type: terminator"
+                     /note="Derived using Geneious Prime 2025.1.3 'Annotate
+                     from Database' based on nucleotide similarity"
+                     /standard_name="KanR Terminator"
+     primer_bind     complement(1061..1076)
+                     /standard_name="oYM148"
+     misc_feature    1077..2076
+                     /note="Geneious type: Editing History Insertion"
+                     /standard_name
+     misc_feature    complement(<1077..>2076)
+                     /note="Geneious type: Region"
+                     /standard_name="LSC"
+     gene            complement(<1077..1514)
+                     /standard_name="rbcL"
+     CDS             complement(<1077..1514)
+                     /codon_start=1
+                     /standard_name="rbcL"
+     source          complement(<1077..>2076)
+     primer_bind     1077..1099
+                     /standard_name="oYM0179"
+     5'UTR           complement(1515..1696)
+                     /standard_name="rbcL 5UTR"
+     misc_feature    complement(1520..1524)
+                     /note="Geneious type: RBS"
+                     /standard_name="PrbcL RBS"
+     prim_transcript complement(1574..1575)
+                     /standard_name="PrbcL processing site"
+     misc_feature    complement(1577..2076)
+                     /standard_name="direct repeat"
+     prim_transcript 1696
+                     /standard_name="PrbcL-182 PEP TSS"
+     regulatory      complement(1697..1793)
+                     /note="Geneious type: promoter"
+                     /standard_name="rbcL promoter"
+     regulatory      complement(1701..1706)
+                     /note="Geneious type: promoter"
+                     /standard_name="PrbcL -10 box f PEP promoter"
+     protein_bind    join(complement(1720..1734),complement(1716..1718),
+                     complement(1712..1714))
+                     /standard_name="CDF1 III binding"
+     prim_transcript complement(1712..1793)
+                     /standard_name="CDF1 binding site"
+     prim_transcript 1721
+                     /standard_name="PatpB-611 PEP TSS"
+     regulatory      complement(1725..1730)
+                     /note="Geneious type: promoter"
+                     /standard_name="PrbcL -35 box of PEP promoter"
+     protein_bind    complement(1735..1747)
+                     /standard_name="A box 2 CDF1 binding site"
+     protein_bind    join(complement(1752..1757),complement(1744..1749))
+                     /standard_name="CDF1 II binding"
+     prim_transcript complement(1750..1763)
+                     /standard_name="A box 1 CDF1 binding site"
+     protein_bind    complement(1786..1793)
+                     /standard_name="CDF1 I binding site"
+     prim_transcript 1830
+                     /standard_name="PatpB-502 PEP TSS"
+     prim_transcript 1844
+                     /standard_name="PatpB-488 PEP TSS"
+     regulatory      2000..2048
+                     /note="Geneious type: promoter"
+                     /standard_name="PatpB NEP"
+     regulatory      2007..2012
+                     /note="Geneious type: promoter"
+                     /standard_name="GAA-box of NEP Type-Ib promoter of"
+     regulatory      2035..2038
+                     /note="Geneious type: promoter"
+                     /standard_name="YRTA NEP promoter of PatpB-289"
+     regulatory      2042..>2076
+                     /note="Geneious type: promoter"
+                     /standard_name="atpB PEP promoter"
+     prim_transcript 2043
+                     /standard_name="PatpB-289 NEP TSS"
+     primer_bind     complement(2053..2076)
+                     /standard_name="oYM0178"
+     primer_bind     complement(2053..2076)
+                     /standard_name="oYM0194"
+     primer_bind     complement(2053..2076)
+                     /standard_name="oYM241"
+     misc_feature    2077..2276
+                     /note="Geneious type: Editing History Replacement"
+                     /standard_name="ATCTGTTATTATGTTATTATATAAATAAAGATATCTTGTAAT
+                     AATTATAATTAAATTAAGAATTTGAATTCTAATTACTAATTAGAAATTAGATAATATT
+                     TATTATTAATAGAATTTGAAGAATTTGAAATTCTTAGTATAGATCTAAGTATCTATAT
+                     ATCTAAATCTAACTGAGTAGGTATAATAAGTGCAAAGAATGTAGAACTGTAGAACTAA
+                     ATAAATGGACTTATTCATCCCCTACATGAGAAAGATATGTATCATAATAAACTTTATT
+                     ATTTTTCTTCATTTCTTTGTCTTTTGTTCTTGTCTTCTAATTTTCTAAAAATAGATAA
+                     AGAGTTTCTTACAGATTATCGAAAGATTCGTTCGAATCCGACCCAACATGAATTTTTA
+                     GCTAAAATGGTTTTTCGGGAGATAGAGAAAGATACAAAACTCTATTATCTATATTTGA
+                     ATTTCAAATTATATACCTAAGACAAGAAGAAGAAATTCGTTTTATTTTCCTAATTTCA
+                     CGAAAGGAAGAACTCACTCTTGTTGATAAAGGCTTCTTGATTCGTAATCAGGAATATA
+                     GGTCAAAAAAAGAGTTATCCTCAACTTTAGTTTTGATTCTTTCTACAATTAGATCTTC
+                     TATCACCAAAGAAAGCGCCATTATTATCTTATTTACTTTGATTCCGACAAACTAACTA
+                     CTTTTTTGCTACAAACACAAATAAAATAATTGAACTTAGTGCTCTACTTGATTTTGCT
+                     TGACTTTTGATTCAAAGGAAAAAAGGCGTGGAGCTTAAATAACTCACTCAGAACGCTT
+                     TTTAAAAGATTACGTGGTACAATTAGGTCGAATAAACCCTTCTGGAATAAGTATTCAG
+                     CTGCTTGTGAACCTTCGGGTACTGTTTTATTCAATGTTTGTTCAATTACTCTTTTACC
+                     TGCAAATGCAATGTAGGCGTTGGGTTCGGCAATAATGATATCCCCCAACATACCAAAA
+                     CTAGCTGTCACTCCACCAGTTGTCGGAGATGTAAGGATTGATACATAAAATAACTTTT
+                     TATTTAATTGATAATCATATAAAGCAGACGATATTTTAGCCATTTGCATCAAGCTCAA
+                     ACTTCCTTCCTGCATGCGCGCCCCCCCAGAAGCACACACTATAATAAGGGGTAAAATT
+                     TGATTGGCAGCGTATTCAATCAAACGGGTGATTTTCTCTCCGACTACGGATCCCATAC
+                     TACCCCCCATAAACTGAAAATCCATAACCCCAATTGCTACGGGAATGCCGTTTAGTTG
+                     GCCTATGCCTGTTTGAACAGCCTCGGTTAATCCTGTCTTTCTTTGATAAGAATCAATA
+                     CGATCTTTATAAGGCTCCTCCTCCGAATGAAATTCAATGGGATCTAGAGAGACCATGT
+                     CTTCATCCATAGGATCCCAAGTACCCGGATCGATCAAAAGTTCAATTCTATCTGAACT
+                     ACTCATTTTCAAATGATATCCACATTGTTCACAAATATTCATTTTTGATTTCAAAAAT
+                     TTCTTATAATTTAATCCATAACAATTTTCGCATTGAACCCACAAATGCCTGTATTTTT
+                     GAGTTACCTCGAGATCATTAGAACTTTCTCTTATAGTTAAATCACTGCCCTTCGTGCG
+                     AGTTCGTCTACTGGAACCCTCGTTTTCACTACTATTTCGACTTTCACCACCACAAACG
+                     GCCCTATAAATGTAACTGTCACCGTAATTCTCACTACCACTTATAATGGAAGTATCTA
+                     TACAGATTTGAGACTGAAGATAACTATCAATGCAACTATTAATGTGATTATTCCAACT
+                     ATATTGAGTATCATACATGTAAGAATTATAGTAGGGATCTTCGCCCCTAAATCCATTA
+                     TTCCGATAATTCGAGTTTCGATAACTATAAAAAGAACTTTCTAGTTCACTCAGAAAAG
+                     AATGATCGTTGTCAATCTCAAAAATATGATTTTCAATATCAAAATAGATGGAATAACT
+                     GTCTCCATTCCTATCACTAACTAAAAAAGTGTCATCAGAGATGAAATTCCGAATGTCT
+                     TTAACGCCGAATAAATAATCAACATTACTGCAACTAGAATTGTCACGATTCCTCCAAC
+                     TATGAATGTTTTTCACTTTTCGATTTGGATCTTCATTGGTATTTTCAATAGGACCAAG
+                     ACTGCCCATTGATTTATTTAGCCCACACCTGCGTTCGAACTCCTTCTTAAACAACATC
+                     GAATTAAACCACCATCTTTCCATAGAGTTTTCTTGCCCCCTATTTGCATGAAAATACA
+                     ATAGATGAATAGTCATTCGCTATAAAATTATTTATTTGAATATCTTATTTCCTATCAG
+                     ACTAAGCATAGAAATCCAATCACTAGGATTATTAACTAATAAGGATTGTGAGTATTGA
+                     AAAAAAGTTCTGAATCTGGGGGAACACTTCACTATATATTAATATGTTGGAACCCCCT
+                     TTATATTATTTAAAATAATATAATTTTTAATAAAGGGCGGCTTCTCCTATGTCGTGTC
+                     AAATTCGCATCGAAAAAAGAGATTTGTCCTCTCCTATAAAGAAATAAAAAAATAATTG
+                     TTTCGTAAAATCTCGTCTAATACTAATATCTAATCACTAACAAATCTAAAATTTAATA
+                     AAAAAATAAGTAATAAATTAAGGTTCTATTTCAACACGGAACAAAGGGGACAATATAC
+                     AGGATGGGTAGAAAGAGGTGTGATACTTGGCTTGATTCAGGGAAACTACAAACTACAG
+                     GATAGAAAAGAATATACCAATCCTAAGGATCCGTAGGATTAATTGTGGATCCAAGACA
+                     ACAATAGAAAGATTTGAGTCTTAGATTTTGATTTAGTTTTCTAGATTTTGTATTTCAA
+                     ATCTTGTATATCTAGGTAAGTATATACTTAGTCAAAATATATGCAATAGAATCTTTGT
+                     T"
+     tRNA            2077..2148
+                     /standard_name="Clos"
+     primer_bind     2077..2093
+                     /standard_name="oYM0196"
+     misc_feature    <2149..>2276
+                     /standard_name="From SyncSol Backbone"
+     misc_feature    2149..2202
+                     /standard_name="glyW-cystT"
+     primer_bind     2149..2169
+                     /standard_name="oYM005"
+     tRNA            complement(2203..2276)
+                     /standard_name="Gem"
+     primer_bind     complement(2258..2276)
+                     /standard_name="oYM0195"
+     regulatory      complement(2277..2449)
+                     /note="Geneious type: terminator"
+                     /note="CrTatpB"
+                     /standard_name="CrTatpB terminator"
+     source          complement(<2277..>5465)
+     source          complement(<2277..>4782)
+     primer_bind     2277..2305
+                     /standard_name="oYM159"
+     CDS             complement(2450..4546)
+                     /note="positive/negative selection marker;
+                     codA(D314A):linker:aadA; codon-optimized for N. tabacum
+                     plastids; some non-optimal codons for higher G/C-content
+                     (for clonability)"
+                     /note="D314A mutation increases affinity to
+                     5-fluorocytosine and decreases affinity to cytosine; see
+                     Mahan, S. D., G. C. Ireton, B. L. Stoddard, and M. E.
+                     Black. 2004. Alanine-scanning mutagenesis reveals a
+                     cytosine deaminase mutant with altered substrate
+                     preference. Biochemistry 43:8957-8964."
+                     /note="for principle of positive (spectinomycin) and
+                     negative (5-fluorocytosine) selection see Jackson et al.
+                     2022 (DOI: 10.1002/biot.202200088; PMID: 35509114)"
+                     /standard_name="CDS"
+     CDS             complement(2450..3241)
+                     /note="aadA"
+                     /standard_name="aadA CDS"
+     CDS             complement(3242..3265)
+                     /note="linker"
+                     /standard_name="linker CDS"
+     CDS             complement(3266..4546)
+                     /note="codA (D314A)"
+                     /standard_name="codA (D314A) CDS"
+     misc_difference complement(3602..3604)
+                     /note="D314A"
+                     /standard_name="D314A difference"
+     regulatory      complement(4547..4782)
+                     /note="Geneious type: promoter"
+                     /note="CrPpsaA"
+                     /standard_name="CrPpsaA promoter"
+     misc_feature    complement(4736..4744)
+                     /note="-10 predicted"
+                     /standard_name="-10 predicted"
+     primer_bind     complement(4755..4782)
+                     /standard_name="oYM157"
+     misc_feature    complement(4760..4765)
+                     /note="-35 predicted"
+                     /standard_name="-35 predicted"
+     misc_feature    4783..4965
+                     /note="Geneious type: Editing History Insertion"
+                     /standard_name
+     tRNA            4783..4854
+                     /standard_name="Bathy"
+     source          <4783..>4965
+                     /mol_type="other DNA"
+                     /organism="synthetic DNA construct"
+     primer_bind     4783..4797
+                     /standard_name="oYM0192"
+     misc_feature    4855..4890
+                     /standard_name="glyY-glyX"
+     tRNA            complement(4891..4965)
+                     /standard_name="Mic"
+     primer_bind     complement(4947..4965)
+                     /standard_name="oYM0193"
+     5'UTR           complement(<4966..5085)
+                     /standard_name="rbcL 5UTR"
+     misc_feature    complement(4966..5465)
+                     /standard_name="direct repeat"
+     source          complement(<4966..>5465)
+     primer_bind     4966..4990
+                     /standard_name="oYM0177"
+     primer_bind     4966..4990
+                     /standard_name="oYM197"
+     prim_transcript 5085
+                     /standard_name="PrbcL-182 PEP TSS"
+     regulatory      complement(5086..5182)
+                     /note="Geneious type: promoter"
+                     /standard_name="rbcL promoter"
+     regulatory      complement(5090..5095)
+                     /note="Geneious type: promoter"
+                     /standard_name="PrbcL -10 box f PEP promoter"
+     protein_bind    join(complement(5109..5123),complement(5105..5107),
+                     complement(5101..5103))
+                     /standard_name="CDF1 III binding"
+     prim_transcript complement(5101..5182)
+                     /standard_name="CDF1 binding site"
+     prim_transcript 5110
+                     /standard_name="PatpB-611 PEP TSS"
+     regulatory      complement(5114..5119)
+                     /note="Geneious type: promoter"
+                     /standard_name="PrbcL -35 box of PEP promoter"
+     protein_bind    complement(5124..5136)
+                     /standard_name="A box 2 CDF1 binding site"
+     protein_bind    join(complement(5141..5146),complement(5133..5138))
+                     /standard_name="CDF1 II binding"
+     prim_transcript complement(5139..5152)
+                     /standard_name="A box 1 CDF1 binding site"
+     protein_bind    complement(5175..5182)
+                     /standard_name="CDF1 I binding site"
+     prim_transcript 5219
+                     /standard_name="PatpB-502 PEP TSS"
+     prim_transcript 5233
+                     /standard_name="PatpB-488 PEP TSS"
+     regulatory      5389..5437
+                     /note="Geneious type: promoter"
+                     /standard_name="PatpB NEP"
+     regulatory      5396..5401
+                     /note="Geneious type: promoter"
+                     /standard_name="GAA-box of NEP Type-Ib promoter of"
+     regulatory      5424..5427
+                     /note="Geneious type: promoter"
+                     /standard_name="YRTA NEP promoter of PatpB-289"
+     regulatory      5431..>5465
+                     /note="Geneious type: promoter"
+                     /standard_name="atpB PEP promoter"
+     prim_transcript 5432
+                     /standard_name="PatpB-289 NEP TSS"
+     primer_bind     complement(5442..5465)
+                     /standard_name="oYM241"
+     5'UTR           5466..5718
+                     /standard_name="atpB Cluster 4"
+     misc_feature    complement(<5466..>5718)
+                     /note="Geneious type: Fragment"
+                     /standard_name="pYM_03_038 PCR Product (insert)
+                     (reversed)"
+     misc_feature    complement(<5466..5574)
+                     /note="Geneious type: Fragment"
+                     /standard_name="Annealed oligo product 9 (insert 2)"
+     primer_bind     5466..5491
+                     /standard_name="oYM242"
+     misc_feature    5571..>5718
+                     /note="Geneious type: Fragment"
+                     /standard_name="Annealed oligo product 10 (insert 1)
+                     (reversed)"
+     primer_bind     complement(5680..5718)
+                     /standard_name="oYM245"
+     misc_feature    complement(<5719..>6680)
+                     /note="Geneious type: Region"
+                     /standard_name="LSC"
+     gene            <5719..>6680
+                     /standard_name="atpB"
+     CDS             <5719..>6680
+                     /standard_name="atpB"
+     source          complement(<5719..>6680)
+     primer_bind     5719..5742
+                     /standard_name="oYM239"
+     primer_bind     5719..5742
+                     /standard_name="oYM240"
+     misc_feature    complement(6423..6449)
+                     /note="Geneious type: PPR"
+                     /standard_name="C50_CDS_atpB_5"
+     primer_bind     complement(6660..6680)
+                     /standard_name="oYM0173"
+     source          complement(6681..>1076)
+                     /organism="synthetic DNA construct"
+                     /mol_type="other DNA"
+     primer_bind     6681..6695
+                     /standard_name="oYM149"
+     rep_origin      complement(6788..7376)
+ORIGIN      
+        1 gaagatcctt tgatcttttc tacggggtct gacgctcagt ggaacgaaaa ctcacgttaa
+       61 gggattttgg tcatgactga tccttcaact cagcaaaagt tcgatttatt caacaaagcc
+      121 acgttgtgtc tcaaaatctc tgatgttaca ttgcacaaga taaaaatata tcatcatgaa
+      181 caataaaact gtctgcttac ataaacagta atacaagggg tgttatgagc catattcaac
+      241 gggaaacgtc ttgctccagg ccgcgattaa attccaacat ggatgctgat ttatatgggt
+      301 ataaatgggc tcgcgataat gtcgggcaat caggtgcgac aatctatcga ttgtatggga
+      361 agcccgatgc gccagagttg tttctgaaac atggcaaagg tagcgttgcc aatgatgtta
+      421 cagatgagat ggtcagacta aactggctga cggaatttat gcctcttccg accatcaagc
+      481 attttatccg tactcctgat gatgcatggt tactcaccac tgcgatcccc gggaaaacag
+      541 cattccaggt attagaagaa tatcctgatt caggtgaaaa tattgttgat gcgctggcag
+      601 tgttcctgcg ccggttgcat tcgattcctg tttgtaattg tccttttaac agcgatcgcg
+      661 tatttcgcct cgctcaggcg caatcacgaa tgaataacgg tttggttgat gcgagtgatt
+      721 ttgatgacga gcgtaatggc tggcctgttg aacaagtctg gaaagaaatg cataagcttt
+      781 tgccattctc accggattca gtcgtcactc atggtgattt ctcacttgat aaccttattt
+      841 ttgacgaggg gaaattaata ggttgtattg atgttggacg agtcggaatc gcagaccgat
+      901 accaggatct tgccatccta tggaactgcc tcggtgagtt ttctccttca ttacagaaac
+      961 ggctttttca aaaatatggt attgataatc ctgatatgaa taaattgcag tttcatttga
+     1021 tgctcgatga gtttttctaa tcagaattgg ttaattggtt gtaacacgcg gccgcattta
+     1081 acataagcag gagggattcg cagatcttcc agacgtagag cgcgcagggc tttgaaccca
+     1141 aatacgttac ctacaatgga agtaaacatg ttggtaacag aaccttcttc aaaaaggtct
+     1201 aaagggtaag ctacataagc aatatattga tctttttctc caacaacacg ctcgatgcgg
+     1261 tagcatcgcc ctttgtaacg atcaaggctg gtaagtccat cggtccatac agttgtccat
+     1321 gtaccagtag aagattcggc agctaccgcg gcccctgctt cttcaggtgg aactccaggt
+     1381 tgaggagtta ctcggaatgc tgccaatata tcagtatcct tggtttggta ctcaggagta
+     1441 taataagtca atttgtactc tttaacacca gctttgaatc caacacttgc tttagtctct
+     1501 gtttgtggtg acataaatcc ctccctacaa ctcatgaatt aagaattctc acaacaacaa
+     1561 ggtctactcg acacgaattc cgtgttaatg aaacttttca caggaatctt tcacaaaatt
+     1621 tccaactaat actaatatta tcaactaatc agaatgtttg attattagac catggtattt
+     1681 gatttgccaa atacatcatt attgtatact ctttcatata tatagcgcaa cccaattttt
+     1741 cttttttact tttttttttt ttgaaatgga aatacctgac taacctaaat aataagaact
+     1801 tcccccttga cagtggtata tgttgtatat gtaaatccta gatgtgaaaa tatacggaat
+     1861 tcctctatga atctatgaaa ggtataaaaa agaaagaaaa acacaaagaa aagaataggc
+     1921 taggcataaa tcgatatgct gaaattgaaa tcaaaaataa ataagaagag gagccaatta
+     1981 gatacaaata atgaatcgta atagaaatag aaaataaagt tcaggttcga attccataga
+     2041 atagataata tggatgggat tgtctataat gatagagggg aacggatcgg atggatcaca
+     2101 tagactctaa atctatgtag ccgagtgaaa ctctcgggtt cctcgccagt ttaaaagaca
+     2161 tcggcgtcaa gcggatgtct ggctgaaagg cctgaagaat tttggtgggg agccccggag
+     2221 tcacaccgag ctatgtgggt ttgaagccca cacgatcttg tatcgatcca ctccccttta
+     2281 acacattatt aaatacacgt ttaacggcgt cctttatttt aaagtaaata gattaaatag
+     2341 ctaatatgac atatataatg tatgtgtaat taaaataaat tggctcttta agaagaaaac
+     2401 aacttaatgg tgtccaaata tttattttaa ttacacataa aaaattaaat cactttccta
+     2461 ctactttagt gatttctccc tttacataat gcacgaactc ttctaattga tcagctctag
+     2521 aagctaatct atcttcttct tgtcctaaat aagcttgtct agcttctaaa attacaggtt
+     2581 gatattgagc aggtaatctt tccatagccc aatcagcagc tacatcttta ggagcaattt
+     2641 ttccagttac agcagaatac caaattctag acaaagtcaa cactacattt ctttcatctc
+     2701 cagcccaatc aggaggagaa ttccaaagag tcaaagtctc attcaaagct tcgaaaagat
+     2761 cttgttcagg tacaggatca aataattctt cagcagcagg tcctactaaa gctacagaat
+     2821 gttctctagc tttggttaac aagatagcta agtcgatatc aatagtagca ggttcaaaaa
+     2881 ttccagcaag aatatcattt ctttgccatt ctccaaattg taattctctt ttagcaggat
+     2941 atctccaagg aataatatca tcgtgtacta caatagttac ttctacagct cttaaaattt
+     3001 cagattctcc aggagaagca gaagtttcaa gaaggtcatt gatcaaagct cgtctagtag
+     3061 tttcatctaa tcttacagtt acagttacta acaaatcgat atcggaatga ggttttaatc
+     3121 ctccatctac agcagatcca tataaatgta cagcaagtaa agtaggttct aaatgtcttt
+     3181 caattactcc tactacttca gataattgag tagatacttc agcaattaca gcttctctag
+     3241 ctccagatcc tcctccagat cctcctcttt tataatcaat agcttcaggt tgttctaaat
+     3301 atacagtagt ttgagcaggt tgagtagaag caattacttt tcctcctctt acagaatatc
+     3361 ttacaggtac ttgtcgtctt aaagcatcaa atccattttc agcaggaaga atgatcaaat
+     3421 tagcagaatt tccagcagca attccataat cttgaagatt caaagttcga gcagaatgat
+     3481 gagtaataag attcaatcca tcattgattt gtccatatcc cattaattga catacatgta
+     3541 atcccatatg taatacttga agcatattag cagttcctaa aggataccaa ggatcaaata
+     3601 cagcatcatg tccaaaacat acattaattc cagattctaa catttctttc actcgagtaa
+     3661 ttcctcttct tttaggataa gtatcaaatc ttccttgcaa atggatgttt accaaaggat
+     3721 tagctacgaa attaattccg gacatcttca ataatcggaa caatcgagaa gtataagctc
+     3781 cattataaga atgcatagca gtagtatgag aagcagttac tctagctccc attccttcat
+     3841 gatgagctaa agcagctaca gtttctacaa atctagattg ttcatcatca atttcatcac
+     3901 aatgtacatc aatcaatcga tcatacttct gagctaaagc aaaagtctta tgcaaagatt
+     3961 ctactccata ttctctagtg aattcaaaat gaggaatagc tcctactaca tcagctccta
+     4021 atcttaaagc ttcttcaagt aaagcttctc cattaggata agataaaatt ccttcttgag
+     4081 gaaaagctac aatttgtaaa tcaatccaag gagctacttc ttgttttact tcaagcatag
+     4141 cttttaaagc agttaaagta gcatcagata catctacatg agttcttaca tgttgaattc
+     4201 cattagcaat ttgccatttt aaagtttgcc aagctctttg ttttacatca tcatgggtta
+     4261 ataaagcttt tctttcagcc catctttcaa ttccttcaaa taaagttcca gattgattcc
+     4321 aattaggttg tccagcagtt tgagtagtat ctaaatgaat atgaggttct acaaaaggag
+     4381 gaattactaa tccttgttca gcatctaaag aattttcagt aataggcatt actccagatt
+     4441 gagcatcaat agcagaaatt tttccatctt gcaaatgaat ttgccataat ccttcttctc
+     4501 caggtaatcg agcattaatg atggtttgca aagcattgtt agacatggat ttctccttat
+     4561 aataacaatt atttaattta ataaatacat tatttacacc attagcaacg cttttaatta
+     4621 ttatgtgttc ataaaaaatg catggttatt aaattagaca aatagttttt tttacatcat
+     4681 atgttatatt ataccataaa tatatttttt attggtttac aaattatttt tacttatttt
+     4741 aaagatattg ttttattttt taccatatgt gtattcgtaa aagggggttt ggccgaggcg
+     4801 gtcgcgaggg tatcaagctc tcgcagccgg gttcaactcc cgggaccccc gccaaaattt
+     4861 gaaaagtgct gcaaagcaca gaccacccaa tggcggagtg tccgggagtt gcacccggct
+     4921 gcatggattt gaagtccatg tgatcccgtt gtcgatcaac actccattcc gtgttaatga
+     4981 aacttttcac aggaatcttt cacaaaattt ccaactaata ctaatattat caactaatca
+     5041 gaatgtttga ttattagacc atggtatttg atttgccaaa tacatcatta ttgtatactc
+     5101 tttcatatat atagcgcaac ccaatttttc ttttttactt tttttttttt tgaaatggaa
+     5161 atacctgact aacctaaata ataagaactt cccccttgac agtggtatat gttgtatatg
+     5221 taaatcctag atgtgaaaat atacggaatt cctctatgaa tctatgaaag gtataaaaaa
+     5281 gaaagaaaaa cacaaagaaa agaataggct aggcataaat cgatatgctg aaattgaaat
+     5341 caaaaataaa taagaagagg agccaattag atacaaataa tgaatcgtaa tagaaataga
+     5401 aaataaagtt caggttcgaa ttccatagaa tagataatat ggatgggatt gtctataatg
+     5461 atagaatgaa agactttctc aagattctga ttcatccact tgagattttg aaattaaaat
+     5521 aggttgggtg agcttgcaaa ttaactcagt ctcattgaat aagtaaacaa ttggattggt
+     5581 tcaattgcat ggtgccgacg aaatcgagtg ctaattccca ttttattgaa ttaaccgatc
+     5641 gacgtgctag cggacattta ttttgaattc tcgaattcaa aaaaaaaaaa tttcgacata
+     5701 tttatttatt ttattattag aatcaatcct actacttctg gttctggggt ttccacgctt
+     5761 gaaaaaaaaa acccggggcg tgtcgtccaa atcatcggtc cggtactaga tgtagccttt
+     5821 cccccgggca agatgccgaa tatttataac gctctggtag ttcaaggtcg agatagtgtt
+     5881 ggtcaaccaa ttaatgtggc ttgtgaggta cagcaattat taggaaataa tcgagttagg
+     5941 gctgtagcta tgagtgctac agagggtcta acgagaggaa tggaagtgat tgacacagga
+     6001 gctcctataa gtgttccggt cgggggagcg actctgggac gaatttttaa cgtgctcgga
+     6061 gaacctgttg ataatttagg gcctgtagat actagtacaa cgtctcctat tcatagatct
+     6121 gcgcccgcct ttatacagtt ggatacaaaa ttatctattt ttgaaacagg aattaaagta
+     6181 gtagatcttt tagcccctta tcgccgtgga ggaaaaatcg gactattcgg gggagctgga
+     6241 gtgggtaaaa cagtacttat tatggaattg attaacaata ttgctaaagc tcacgggggc
+     6301 gtatccgtat ttggcggagt gggtgaacgt actcgggaag gaaatgatct ttacatggaa
+     6361 atgaaagaat ctggagtaat taatgaagaa aatattgcag aatcaaaagt agccctagtt
+     6421 tatggtcaga tgaatgaacc gccgggagct cgtatgagag ttggtttgac tgccctaact
+     6481 atggcggaat atttccgaga tgttaatgag caagacgtac ttctttttat tgacaatatc
+     6541 ttccgtttcg tccaagcagg atccgaagta tcggccttat tgggtagaat gccttccgct
+     6601 gtgggttatc aacccaccct gagtaccgaa atgggttctt tacaagaaag aattacttct
+     6661 accaaagaag ggtccataac gcggccgcac ggttatccac agaatcaggg gataacgcag
+     6721 gaaagaacat gtgagcaaaa ggccagcaaa aggccaggaa ccgtaaaaag gccgcgttgc
+     6781 tggcgttttt ccataggctc cgcccccctg acgagcatca caaaaatcga cgctcaagtc
+     6841 agaggtggcg aaacccgaca ggactataaa gataccaggc gtttccccct ggaagctccc
+     6901 tcgtgcgctc tcctgttccg accctgccgc ttaccggata cctgtccgcc tttctccctt
+     6961 cgggaagcgt ggcgctttct catagctcac gctgtaggta tctcagttcg gtgtaggtcg
+     7021 ttcgctccaa gctgggctgt gtgcacgaac cccccgttca gcccgaccgc tgcgccttat
+     7081 ccggtaacta tcgtcttgag tccaacccgg taagacacga cttatcgcca ctggcagcag
+     7141 ccactggtaa caggattagc agagcgaggt atgtaggcgg tgctacagag ttcttgaagt
+     7201 ggtggcctaa ctacggctac actagaagaa cagtatttgg tatctgcgct ctgctgaagc
+     7261 cagttacctt cggaaaaaga gttggtagct cttgatccgg caaacaaacc accgctggta
+     7321 gcggtggttt ttttgtttgc aagcagcaga ttacgcgcag aaaaaaagga tctcaa
+//

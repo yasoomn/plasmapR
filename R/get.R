@@ -105,6 +105,7 @@
     feature <- list()
 
     for (line in lines) {
+      
       if (.is_feature_start(line)) {
         feature[['type']] <- .get_feature_type(line)
         feature[['index']] <- i
@@ -113,12 +114,14 @@
       } else if (.is_label_start(line)) {
         current_label <- .get_label(line)
         value <- .get_value(line)
+        print(stringr::str_detect(value, "Geneious type: "))
         if (current_label == "direction") {
           value <- c(
             "RIGHT" = 1,
             "LEFT" = -1
           )[value]
-        } else if (stringr::str_detect(value, "Geneious type: ")) {
+          
+        } else if (!is.na(value) && stringr::str_detect(value, "Geneious type: ")) {
           ## Geneious prime exported genbank files have a note that contains the type of feature instead of the type field. 
           # This is a workaround to get the type from the note field.
           current_label <- "type"
